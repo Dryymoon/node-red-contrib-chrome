@@ -107,7 +107,7 @@ COPY . .
 RUN groupadd -r blessuser && useradd -r -g blessuser -G audio,video blessuser \
   && mkdir -p /home/blessuser/Downloads \
   && chown -R blessuser:blessuser /home/blessuser \
-  && chown -R node-red:node-red /data \
+  && chown -R blessuser:blessuser /data \
   && chown -R blessuser:blessuser $application_directory
 
 # Run everything after as non-privileged user.
