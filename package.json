@@ -1,0 +1,37 @@
+{
+  "name": "zemli-nodered",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node-red"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.int.pilipenko.cc:21212/zemli/nodered-scrapper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-red": "^0.20.5",
+    "puppeteer": "^1.15.0"
+  },
+  "node-red": {
+    "nodes": {
+      "puppeteer-browser-launch": "puppeteer/browser/launch.js",
+      "puppeteer-browser-close": "puppeteer/browser/close.js",
+      "puppeteer-browser-newPage": "puppeteer/browser/newPage.js",
+      "puppeteer-page-goto": "puppeteer/page/goto.js",
+      "puppeteer-page-screenshot": "puppeteer/page/screenshot.js",
+      "puppeteer-page-content": "puppeteer/page/content.js",
+      "puppeteer-page-click": "puppeteer/page/click.js",
+      "puppeteer-page-focus": "puppeteer/page/focus.js",
+      "puppeteer-page-waitFor": "puppeteer/page/waitFor.js",
+      "puppeteer-page-close": "puppeteer/page/close.js",
+      "puppeteer-page-keyboard-type": "puppeteer/page/keyboard/type.js",
+      "puppeteer-page-keyboard-press": "puppeteer/page/keyboard/press.js",
+      "puppeteer-page-querySelector": "puppeteer/page/querySelector.js"
+    }
+  }
+}
