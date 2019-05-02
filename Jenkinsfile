@@ -33,7 +33,7 @@ node {
 
         docker.withRegistry('https://docker-registry.int.pilipenko.cc') {
             app.push("${env.BRANCH_NAME}")
-            // app.push("latest")
+            // app.push("latest")sadas
         }
     }
 }
