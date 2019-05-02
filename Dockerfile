@@ -1,14 +1,6 @@
 FROM ubuntu:18.04
 
-# Application parameters and variables 1
-# ENV NODE_ENV=production
-ENV HOST=0.0.0.0
-ENV PORT=3000
-ENV application_directory=/usr/src/node-red
-ENV ENABLE_XVBF=true
-
-# Configuration for Chrome
-ENV CONNECTION_TIMEOUT=60000
+# ENV ENABLE_XVBF=true
 
 # Dependencies + NodeJS
 RUN apt-get update && \
@@ -80,6 +72,14 @@ RUN chmod +x /usr/local/bin/dumb-init
 # Cleanup ubuntu instalations
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+
+ENV NODE_ENV=production
+
+# Configuration for Chrome
+# ENV CONNECTION_TIMEOUT=60000
+
+ENV application_directory=/usr/src/node-red
+
 RUN mkdir -p $application_directory
 
 RUN mkdir /data
@@ -98,8 +98,8 @@ COPY package.json .
 COPY . .
 
 # Build
-ENV NPM_CONFIG_LOGLEVEL warn
-RUN npm run build
+#ENV NPM_CONFIG_LOGLEVEL warn
+#RUN npm run build
   # &&\
   # npm prune --production
 
