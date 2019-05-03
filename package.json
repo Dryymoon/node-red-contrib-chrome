@@ -1,5 +1,5 @@
 {
-  "name": "zemli-nodered",
+  "name": "node-red-contrib-chrome",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-red": "^0.20.5",
     "puppeteer": "^1.15.0"
   },
   "node-red": {
