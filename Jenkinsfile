@@ -5,13 +5,13 @@ pipeline {
         docker { image 'node:10-alpine' }
     }
     stages {
-        stage('Clone repository') {
+        stage('Clone repository') { steps {
             echo 'Pulling...' + env.BRANCH_NAME
             checkout scm
-        }
+        }}
 
-        stage('Build') {
+        stage('Build') { steps {
             sh 'node --version'
-        }
+        }}
     }
 }
