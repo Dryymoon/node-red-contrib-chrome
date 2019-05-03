@@ -1,39 +1,17 @@
 #!groovy
-node {
-    def app
 
-    stage('Clone repository') {
-        /* Let's ma11ke sure we have the repository cloned to our workspace */
-
-        echo 'Pulling...' + env.BRANCH_NAME
-        checkout scm
+pipeline {
+    agent {
+        docker { image 'node:10-alpine' }
     }
-
-    stage('Build image') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
-
-        app = docker.build("zemli-nodered")
-    }
-
-    stage('Test image') {
-        /* Ideally, we would run a test framework against our image.
-         * For this example, we're using a Volkswagen-type approach ;-) */
-
-        app.inside {
-            sh 'echo "Tests passed"'
+    stages {
+        stage('Clone repository') {
+            echo 'Pulling...' + env.BRANCH_NAME
+            checkout scm
         }
-    }
 
-    stage('Push image') {
-        /* Finally, we'll push the image with two tags:
-         * First, the incremental build number from Jenkins
-         * Second, the 'latest' tag.
-         * Pushing multiple tags is cheap, as all the layers are reused. */
-
-        docker.withRegistry('https://docker-registry.int.pilipenko.cc') {
-            app.push("${env.BRANCH_NAME}")
-            // app.push("latest")sadasasdas
+        stage('Build') {
+            sh 'node --version'
         }
     }
 }
