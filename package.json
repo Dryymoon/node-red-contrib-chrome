@@ -15,6 +15,7 @@
   "node-red": {
     "nodes": {
       "puppeteer-browser-launch": "puppeteer/browser/launch.js",
+      "puppeteer-browser-connect": "puppeteer/browser/connect.js",
       "puppeteer-browser-close": "puppeteer/browser/close.js",
       "puppeteer-browser-newPage": "puppeteer/browser/newPage.js",
       "puppeteer-page-goto": "puppeteer/page/goto.js",
