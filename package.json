@@ -4,16 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node-red"
-  },
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@gitlab.int.pilipenko.cc:21212/zemli/nodered-scrapper.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "puppeteer": "^1.15.0"
   },
   "node-red": {
