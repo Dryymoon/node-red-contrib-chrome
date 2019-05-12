@@ -11,9 +11,9 @@ pipeline {
         }} */
 
         stage('Build') { steps {
-            npm install
-            npm run build
-            git commit -am "Builded version"
+            sh 'npm install'
+            sh 'npm run build'
+            sh 'git commit -am "Builded version"'
         }}
     }
 }
