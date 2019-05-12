@@ -1,0 +1,7 @@
+{
+  "name": "puppeteer-browser-disconnect",
+  "node": "node.js",
+  "ui": "ui.js",
+  "editor": "editor.html",
+  "help": "help.html"
+}

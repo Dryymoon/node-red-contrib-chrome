@@ -1,0 +1,40 @@
+<!-- CHECKBOX -->
+
+<div class="form-row">
+  <label for="node-input-headless"><i class="fa fa-random"></i> <span>Options</span></label>
+  <label for="node-input-headless" style="width:70%">
+    <input type="checkbox"
+           id="node-input-headless"
+           style="display:inline-block; width:22px; vertical-align:baseline;">
+    <span>Headless</span>
+  </label>
+</div>
+
+<!-- INPUT -->
+<div class="form-row">
+  <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+  <input type="text" id="node-input-name" style="width:70%;" placeholder="Name" />
+</div>
+
+<!-- FORM TIP -->
+<div class="form-tips">
+  <span>
+    The messages sent to this node <b>must</b> originate from an <i>http input</i> node
+  </span>
+</div>
+
+<!-- SELECT -->
+
+<div class="form-row">
+  <label for="node-input-user"><i class="fa fa-search"></i>
+    <span>
+      Search
+    </span>
+  </label>
+  <select type="text" id="node-input-user" style="display: inline-block; vertical-align: middle; width:60%;">
+    <option value="false">all public tweets</option>
+    <option value="true">all tweets from people I follow</option>
+    <option value="user">the tweets of specific users</option>
+    <option value="dm">your direct messages</option>
+  </select>
+</div>
