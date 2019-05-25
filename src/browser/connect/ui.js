@@ -15,8 +15,8 @@ export default {
     slowMo: { value: undefined }
   },
   inputs: 1,
-  outputs: 2,
-  outputLabels: ["message", "errors"],
+  outputs: 1,
+  // outputLabels: ["message", "errors"],
   icon: require("../icons/chromium-icon-32.png"),
   label: function () {
     return this.name || "connect";
