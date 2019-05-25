@@ -7,16 +7,21 @@ export default {
     name: { value: '' },
     url: { value: '', validate: (v) => v === '' ? true : isUri(v) },
     waitUntil: { value: 'load', required: true },
-    timeout: { value: 30, required: true, validate: RED.validators.number }
+    timeout: { value: 30, required: true, validate: RED.validators.number },
+    // outputs: { value: 1 },
   },
   inputs: 1,
-  outputs: 2,
-  outputLabels: ["success", "fail"],
+  outputs: 1,
+  outputLabels: ["ok", "fail"],
   icon: require("../../browser/icons/chromium-icon-32.png"),
   label() {
     return this.name || "goto url";
   },
   paletteLabel: "goto url",
+  /* oneditsave() {
+    this.outputs = 1;
+    if ($('#node-input-hasInvalidMessagePort').is(':checked')) this.outputs = 2;
+  } */
 };
 
 // https://nodered.org/docs/creating-nodes/appearance

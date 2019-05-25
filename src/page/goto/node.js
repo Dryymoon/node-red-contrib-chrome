@@ -22,7 +22,7 @@ export default class PuppeteerPageOpen extends Node {
 
       } catch (e) {
         this.error(`Can't goto url, ${e.toString()}`, msg);
-        this.send([null, msg]);
+        // this.send([null, msg]);
       }
     });
   }
