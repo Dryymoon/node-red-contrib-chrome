@@ -6,10 +6,9 @@ export default class PuppeteerBrowserStop extends Node {
 
     this.status({});
 
-    this.on('input', async ({ $browser, ...msg }) => {
+    this.on('input', async ({ $$browserGetter, browser, ...msg }) => {
       this.status({ fill: "blue", shape: "dot" });
-
-      if ($browser) await $browser().close();
+      if ($$browserGetter) await $$browserGetter().close();
 
       setTimeout(() => this.status({}), 500);
       this.send(msg);

@@ -23,7 +23,7 @@ export default class PuppeteerBrowserConnect extends Node {
 
         const browser = await puppeteer.connect({ browserURL, slowMo });
 
-        this.send({ ...msg, $browser: () => browser, $browserContext: () => browser });
+        this.send({ ...msg, $$browserGetter: () => browser, $$browserContextGetter: () => browser });
 
       } catch (e) {
         this.error(`Can't connect to browser, ${e.toString()}`, msg);

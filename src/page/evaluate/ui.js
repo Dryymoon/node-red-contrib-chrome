@@ -16,13 +16,11 @@ export default {
   paletteLabel: "page-evaluate",
   oneditprepare() {
     const editor = ace.edit("code-editor");
-    // editor.setTheme("ace/theme/twilight");
     editor.session.setMode("ace/mode/javascript");
     editor.session.setValue(this.code);
     this.$$editor = editor;
   },
   oneditsave() {
-    console.log('VAL', this.$$editor.getValue());
     this.code = this.$$editor.getValue();
   }
 };

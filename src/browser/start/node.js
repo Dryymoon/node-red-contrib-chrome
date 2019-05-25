@@ -13,7 +13,7 @@ export default class PuppeteerBrowserStart extends Node {
         let context = browser;
         if (incognito) context = await browser.createIncognitoBrowserContext();
 
-        this.send({ ...msg, $browser: () => browser, $browserContext: () => context });
+        this.send({ ...msg, $$browserGetter: () => browser, $$browserContextGetter: () => context });
 
       } catch (e) {
         this.error(`Can't start browser, ${e.toString()}`, msg);

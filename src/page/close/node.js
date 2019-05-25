@@ -4,9 +4,9 @@ export default class PuppeteerPageOpen extends Node {
   constructor(config) {
     super(config);
 
-    this.on('input', async ({ $page, ...msg }) => {
+    this.on('input', async ({ $$pageGetter, ...msg }) => {
       try {
-        if ($page) await $page().close();
+        if ($$pageGetter) await $$pageGetter().close();
         this.send(msg);
       } catch (e) {
         this.error(`Can't close page, ${e.toString()}`, msg);

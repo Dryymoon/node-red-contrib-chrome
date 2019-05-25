@@ -6,10 +6,10 @@ export default class PuppeteerBrowserDisconnect extends Node {
 
     this.status({});
 
-    this.on('input', async ({ $browser, ...msg }) => {
+    this.on('input', async ({ $$browserGetter, ...msg }) => {
       this.status({ fill: "blue", shape: "dot" });
 
-      if ($browser) await $browser().disconnect();
+      if ($$browserGetter) await $$browserGetter().disconnect();
 
       setTimeout(() => this.status({}), 500);
       this.send(msg);

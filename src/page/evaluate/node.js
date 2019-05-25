@@ -7,8 +7,8 @@ export default class PuppeteerPageOpen extends Node {
     this.on('input', async (msg) => {
       try {
         const { code } = config;
-        const { $page } = msg;
-        msg.payload = await $page().evaluate((c) => eval(c), code);
+        const { $$pageGetter } = msg;
+        msg.payload = await $$pageGetter().evaluate((c) => eval(c), code);
         this.send(msg);
       } catch (e) {
         this.error(`Can't evaluate in page, ${e.toString()}`, msg);

@@ -1,4 +1,5 @@
 import { isUri } from 'valid-url';
+import isString from 'lodash/isString';
 import Node from '../../node-base';
 
 export default class PuppeteerPageOpen extends Node {
@@ -7,15 +8,13 @@ export default class PuppeteerPageOpen extends Node {
 
     this.on('input', async (msg) => {
       try {
-        const { $page, payload: urlFromMsg } = msg;
+        const { $$pageGetter, payload: urlFromMsg } = msg;
         const { url: urlFromConfig, waitUntil, timeout = 30 } = config;
-        let url;
-        if (urlFromMsg && isUri(urlFromMsg)) url = urlFromMsg;
-        if (urlFromConfig && isUri(urlFromConfig)) url = urlFromConfig;
+        let url = urlFromConfig || urlFromMsg;
 
-        if (!url) throw new Error('no url passed');
+        if (!url || !isString(url) || !isUri(url)) throw new Error('no url passed');
 
-        await $page().goto(url, { waitUntil, timeout: timeout * 1000 });
+        await $$pageGetter().goto(url, { waitUntil, timeout: timeout * 1000 });
 
         this.send(msg);
 

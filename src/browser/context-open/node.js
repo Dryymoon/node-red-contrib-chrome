@@ -6,9 +6,9 @@ export default class PuppeteerIncognitoContextStart extends Node {
 
     this.on('input', async (msg) => {
       try {
-        const { $browser } = msg;
-        const context = await $browser().createIncognitoBrowserContext();
-        this.send({ ...msg, $browserContext: () => context });
+        const { $$browserGetter } = msg;
+        const context = await $$browserGetter().createIncognitoBrowserContext();
+        this.send({ ...msg, $$browserContextGetter: () => context });
       } catch (e) {
         this.error(`Can't create browser context, ${e.toString()}`, msg);
       }

@@ -6,9 +6,9 @@ export default class PuppeteerPageOpen extends Node {
 
     this.on('input', async (msg) => {
       try {
-        const { $browserContext } = msg;
-        const page = await $browserContext().newPage();
-        this.send({ ...msg, $page: () => page });
+        const { $$browserContextGetter } = msg;
+        const page = await $$browserContextGetter().newPage();
+        this.send({ ...msg, $$pageGetter: () => page });
       } catch (e) {
         this.error(`Can't open page, ${e.toString()}`, msg);
       }
