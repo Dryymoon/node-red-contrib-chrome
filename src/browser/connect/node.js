@@ -3,7 +3,7 @@ import { resolve as dnsResolve } from 'dns';
 import url from 'url';
 import { isIP } from 'net';
 import puppeteer from "../pupeteer";
-import Node from '../../node-base';
+import { Node } from 'node-red-module-creator';
 
 export default class PuppeteerBrowserConnect extends Node {
 

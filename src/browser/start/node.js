@@ -1,5 +1,5 @@
+import { Node } from 'node-red-module-creator';
 import puppeteer from "../pupeteer";
-import Node from '../../node-base';
 
 export default class PuppeteerBrowserStart extends Node {
   constructor(config) {

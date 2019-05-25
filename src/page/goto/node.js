@@ -1,6 +1,6 @@
 import { isUri } from 'valid-url';
 import isString from 'lodash/isString';
-import Node from '../../node-base';
+import { Node } from 'node-red-module-creator';
 
 export default class PuppeteerPageOpen extends Node {
   constructor(config) {

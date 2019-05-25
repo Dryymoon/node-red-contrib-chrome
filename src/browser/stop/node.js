@@ -1,4 +1,4 @@
-import Node from '../../node-base';
+import { Node } from 'node-red-module-creator';
 
 export default class PuppeteerBrowserStop extends Node {
   constructor(config) {
