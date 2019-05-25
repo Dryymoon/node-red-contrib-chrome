@@ -16,7 +16,9 @@ export default class PuppeteerPageOpen extends Node {
 
         await $$pageGetter().goto(url, { waitUntil, timeout: timeout * 1000 });
 
-        this.send(msg);
+        const content = await $$pageGetter().content();
+
+        this.send({ ...msg, payload: content });
 
       } catch (e) {
         this.error(`Can't goto url, ${e.toString()}`, msg);
