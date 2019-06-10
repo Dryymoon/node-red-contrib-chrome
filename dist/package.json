@@ -10,8 +10,10 @@
       "puppeteer-context-open": "dist/puppeteer-context-open.js",
       "puppeteer-page-close": "dist/puppeteer-page-close.js",
       "puppeteer-page-evaluate": "dist/puppeteer-page-evaluate.js",
+      "c9050ce3-f09e-4de8-9586-046a0a77d571": "dist/c9050ce3-f09e-4de8-9586-046a0a77d571.js",
       "puppeteer-page-goto": "dist/puppeteer-page-goto.js",
-      "puppeteer-page-open": "dist/puppeteer-page-open.js"
+      "puppeteer-page-open": "dist/puppeteer-page-open.js",
+      "13398260-37c5-4162-b1c4-5e5d0e3c3934": "dist/13398260-37c5-4162-b1c4-5e5d0e3c3934.js"
     }
   },
   "dependencies": {
