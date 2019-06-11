@@ -19,3 +19,25 @@
   </label>
   <input type="text" id="node-input-value" style="width:70%;" placeholder="some existed value" />
 </div>
+<div class="form-row">
+  <label for="node-input-waitUntil">
+    <i class="fa fa-hourglass-half"></i>
+    <span>
+      Wait until
+    </span>
+  </label>
+  <select id="node-input-waitUntil" style="display: inline-block; vertical-align: middle; width:70%;">
+    <option value="selected">Selected</option>
+    <option value="load">Page Load</option>
+    <option value="domcontentloaded">DOM Content Loaded</option>
+    <option value="networkidle0">network idle 0 connections</option>
+    <option value="networkidle2">network idle 2 connections</option>
+  </select>
+</div>
+<div class="form-row">
+  <label for="node-input-timeout">
+    <i class="fa fa-history"></i>
+    <span>Timeout</span>
+  </label>
+  <input type="number" id="node-input-timeout" style="width:70%;" />
+</div>

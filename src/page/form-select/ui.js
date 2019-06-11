@@ -5,6 +5,8 @@ export default {
     name: { value: '' },
     selector: { value: '', required: true },
     value: { value: '', required: true },
+    waitUntil: { value: 'selected' },
+    timeout: { value: 30, required: true, validate: RED.validators.number },
   },
   inputs: 1,
   outputs: 1,

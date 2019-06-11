@@ -7,13 +7,22 @@ export default class PuppeteerFormSelect extends Node {
     this.on('input', async (msg) => {
       try {
         const { $$pageGetter } = msg;
-        const { selector, value } = config;
+        const { selector, value, waitUntil, timeout } = config;
 
-        await $$pageGetter().select(selector, value);
+        await $$pageGetter().waitForSelector(selector, { timeout: 30 * 1000 });
+
+        if (waitUntil === 'selected') {
+          await $$pageGetter().select(selector, value);
+        } else {
+          $$pageGetter().select(selector, value).catch(() => null);
+
+          await $$pageGetter().waitForNavigation({ waitUntil, timeout: timeout * 1000 });
+        }
 
         this.send({ ...msg });
 
       } catch (e) {
+        // console.error(e);
         this.error(`Can't select, ${e.toString()}`, msg);
       }
     });
